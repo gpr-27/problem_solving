@@ -1,1 +1,19 @@
-
+class Solution {
+public:
+    int secondLargestElement(vector<int>& nums) {
+        //your code goes here
+        int n=nums.size();
+        int lar=nums[0];
+        int seclar=-1;
+        for (int i=0;i<n;i++) {
+            if (nums[i]>lar) {
+                seclar=lar;
+                lar=nums[i];
+            }
+            else if (nums[i]!=lar && seclar<nums[i]) {
+                seclar=nums[i];
+            }
+        }
+        return seclar;
+    }
+};
